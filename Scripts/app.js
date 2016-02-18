@@ -1,42 +1,51 @@
 "use strict";
 
 // setup your IIFE (Immediately Invoked Function Expression)
+
 (function () {
 
 
-    var paragraphData = [{"paragraph":"First Paragraph Stuff"}, 
-                        {"paragraph":"Second Paragraph Stuff"},
-                        {"paragraph":"Third Paragraph Stuff"},
-                        {"paragraph":"Fourth Paragraph Stuff"}];
+    if(document.getElementById("home") != null) {
+        console.log("Home Page");
 
-    console.log("App Started..."); 
-  
-  /* the ugly way
-    console.log(paragraphData[1]);
-    console.log(paragraphData[1]);
-    console.log(paragraphData[2]);
-    console.log(paragraphData[0]);
-    console.log(paragraphData[5]);
-    console.log(paragraphData[6]);
-  */
-  
-    // a little nicer but counting up
+    } else if (document.getElementById("projects") != null) {
+        console.log("Projects Page");
+
+
+    } else if (document.getElementById("contact") != null) {
+
+        console.log("Contact Page");
+        var checkMeOut;
     
-    var paragraphDataLength = paragraphData.length;
-    for(var index= 0; index < paragraphDataLength; index++) {
-        console.log(paragraphData[index].paragraph);
+        checkMeOut = document.getElementById("checkMeOut");
+        console.log("checkMeOut");
     }
+
+        checkMeOut.addEventListener("change", function(){
+
+            if (checkMeOut.checked) {
+                console.log("checkMeOut Checked");
+            } else {
+                 console.log("checkMeOut Unchecked");
+            }
+         });
+    }
+
+ })();
+
+
+
+
+
     
-    var name = document.getElementById("name");
-    
-    var button = document.getElementById("Button1");
-    
-    button.addEventListener("click", function(){
-        // execute stuff here after button click
-        console.log("Clicked!!");
-        console.log(name.value);
-    });
-    
+  // checkMeOut.onclick(function() {
+    //     console.log("checkMeOut clicked");
+    // });
+
+
+      // (checkMeOut.checked) ? console.log("It's checked") ; console.log("It's checked");
+
+
    
      // a little nicer but counting down
     /*
@@ -54,20 +63,20 @@
   
     //declared a named function way
 
-    function replaceFirstParagraph() {
-        console.log("inside replaceFirstParagraph function");
-        var firstParagraph;
+//     function replaceFirstParagraph() {
+//         console.log("inside replaceFirstParagraph function");
+//         var firstParagraph;
 
-        firstParagraph = document.getElementById("firstParagraph");
+//         firstParagraph = document.getElementById("firstParagraph");
 
-        firstParagraph.innerHTML = "My New Paragraph Data";
+//         firstParagraph.innerHTML = "My New Paragraph Data";
         
-    }
+//     }
 
    
-    // call the replaceFirstParagraph function
-    replaceFirstParagraph();
+//     // call the replaceFirstParagraph function
+//     replaceFirstParagraph();
 
 
-})();
+// })();
 
