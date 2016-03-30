@@ -3,33 +3,64 @@
 
     "use strict";
 
-var myVariable = "hello!";
+    var output = "";
+    var firstParagraph = document.getElementById("firstParagraph");
 
-console.log("myVariable " + myVariable);
+    var person = {
+
+        "age": 40,
+        "name": "Orie",
+        "address": "1 Georgian Drive",
+        "city": "Barrie",
+        "province":"Ontario",
+
+        "familyNames": [
+        "Harrison",
+        "Marissa",
+        "Dino",
+        "Alexander"
+        ],
+
+        "sayHello": function(){
+            output += "<br><hr><br>"
+            output += person.name + " says hello";
+        }
+        
+    }; /* Var person = new Object(); */
 
 
-var myArray = [
-    "Orie Hulan",
-    "Georgian Drive",
-    "Barrie",
-    "Ontario",
-    40,
-    true
-];
+
+// for every key in the Person Object, loop...
+for(var key in person) {
+
+    if (key == "familyNames") {
+
+        output += "<br>Family Names: <br>";
+
+        output += "<hr><br>";
+
+        output += "<ul>";
+
+        for(var index = 0; index < person.familyNames.length; index++) {
+            output += "<li>" + person.familyNames[index];
+        } // close for loop
+        output += "</ul>";
+    } // close if statement
 
 
-console.log(myArray.slice(4, 1));
+    // Check if the key is the sayHello method
+    else if (key == "sayHello") {
+        person.sayHello();
+    }
 
-for (var index=0; index < myArray.length; index++) {
-    console.log(myArray[index]);
+    // For all other cases, do the following...
+    else {
+        output += person[key] + "<br>";
+    } // else statement
 }
 
 
-myArray.push("My First Greeting!");
-
-myArray.push("My Second Greeting!");
-
-console.log(myArray);
+firstParagraph.innerHTML = output;
 
 })();
 
