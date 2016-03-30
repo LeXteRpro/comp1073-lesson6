@@ -15,21 +15,28 @@
     } else if (document.getElementById("contact") != null) {
 
         console.log("Contact Page");
-        var checkMeOut;
-    
-        checkMeOut = document.getElementById("checkMeOut");
-        console.log("checkMeOut");
-    }
+        var email = document.getElementById("email");
+        var password = document.getElementById("password");
+        var checkMeOut = document.getElementById("checkMeOut");
+        var submitButton = document.getElementById("submitButton");
 
-        checkMeOut.addEventListener("change", function(){
+        // Checkbox Event Listener 
+        checkMeOut.addEventListener("change", function () {
 
             if (checkMeOut.checked) {
-                console.log("checkMeOut Checked");
+                console.log("It's checked!");
             } else {
-                 console.log("checkMeOut Unchecked");
-            }
-         });
-    }
+                 console.log("It's Unchecked!");
+            } // end else
+         }); // end addEventListener
+
+        submitButton.addEventListener("click", function(event) {
+                    event.preventDefault();
+                    console.log("Email: " + email.value);
+                    console.log("Password: " + password.value);
+                });
+
+        } // End else if
 
  })();
 
