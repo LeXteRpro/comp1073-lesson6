@@ -8,7 +8,22 @@ var myVariable = "hello!";
 console.log("myVariable " + myVariable);
 
 
-var myArray = [];
+var myArray = [
+    "Orie Hulan",
+    "Georgian Drive",
+    "Barrie",
+    "Ontario",
+    40,
+    true
+];
+
+
+console.log(myArray.slice(4, 1));
+
+for (var index=0; index < myArray.length; index++) {
+    console.log(myArray[index]);
+}
+
 
 myArray.push("My First Greeting!");
 
